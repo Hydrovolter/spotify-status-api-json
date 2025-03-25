@@ -6,6 +6,7 @@ import requests
 from base64 import b64encode
 from dotenv import load_dotenv, find_dotenv
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 load_dotenv(find_dotenv())
 
@@ -18,7 +19,17 @@ REFRESH_TOKEN_URL = "https://accounts.spotify.com/api/token"
 NOW_PLAYING_URL = "https://api.spotify.com/v1/me/player/currently-playing"
 RECENTLY_PLAYING_URL = "https://api.spotify.com/v1/me/player/recently-played?limit=1"
 
+allowedOrigins = [
+    "https://hydrovolter.com",
+    "https://hydrovolter.pages.dev",
+    "https://hydrovolter.github.io",
+    "https://hydrovolter.vercel.app",
+    "http://localhost:5503"
+]
+
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": allowedOrigins}})
+
 
 def get_auth():
     return b64encode(f"{SPOTIFY_CLIENT_ID}:{SPOTIFY_SECRET_ID}".encode()).decode("ascii")
