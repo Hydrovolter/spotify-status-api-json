@@ -1,8 +1,0 @@
-{
-    "current-theme": "portfolio",
-    "templates": {
-        "light": "spotify.html.j2",
-        "dark": "spotify-dark.html.j2",
-        "portfolio": "spotify-portfolio.html.j2"
-    }
-}
