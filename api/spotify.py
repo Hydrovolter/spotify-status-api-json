@@ -61,8 +61,10 @@ def spotify_status(path):
         return jsonify({"artist": "", "song": "", "song_url": "", "album_art": ""})
     
     item = data["item"]
+    artists = "; ".join(artist["name"] for artist in item["artists"])
+    
     return jsonify({
-        "artist": item["artists"][0]["name"],
+        "artist": artists,
         "song": item["name"],
         "song_url": item["external_urls"]["spotify"],
         "album_art": item["album"]["images"][1]["url"] if item["album"]["images"] else ""
