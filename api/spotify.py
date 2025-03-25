@@ -41,8 +41,10 @@ def get(url):
         response = requests.get(url, headers={"Authorization": f"Bearer {SPOTIFY_TOKEN}"})
     return response.json() if response.status_code == 200 else {}
 
-@app.route("/status", methods=["GET"])
-def spotify_status():
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+@app.route('/with_parameters')
+def spotify_status(path):
     data = get(NOW_PLAYING_URL)
     if not data.get("is_playing"):
         return jsonify({"artist": "", "song": "", "song_url": "", "album_art": ""})
