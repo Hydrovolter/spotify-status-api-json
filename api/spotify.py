@@ -57,18 +57,20 @@ def get(url):
 @app.route('/with_parameters')
 def spotify_status(path):
     data = get(NOW_PLAYING_URL)
-    if not data.get("is_playing"):
+    
+    item = data.get("item")
+    if not data.get("is_playing") or item is None:
         return jsonify({"artist": "", "song": "", "song_url": "", "album_art": ""})
     
-    item = data["item"]
-    artists = "; ".join(artist["name"] for artist in item["artists"])
-    
+    artists = "; ".join(artist["name"] for artist in item.get("artists", []))
+
     return jsonify({
         "artist": artists,
         "song": item["name"],
         "song_url": item["external_urls"]["spotify"],
-        "album_art": item["album"]["images"][1]["url"] if item["album"]["images"] else ""
+        "album_art": item["album"]["images"][1]["url"] if item.get("album", {}).get("images") else ""
     })
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=os.getenv("PORT", 5000), debug=True)
