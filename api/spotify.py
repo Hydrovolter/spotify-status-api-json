@@ -20,11 +20,17 @@ NOW_PLAYING_URL = "https://api.spotify.com/v1/me/player/currently-playing"
 RECENTLY_PLAYING_URL = "https://api.spotify.com/v1/me/player/recently-played?limit=1"
 
 allowedOrigins = [
-    "https://hydrovolter.com",
-    "https://hydrovolter.pages.dev",
+    "http://localhost:5503",
+    "https://hydrovolter.pages.dev/",
+    "http://hydrovolter.pages.dev",
+    "https://hydrovolter.vercel.app/",
+    "http://hydrovolter.vercel.app",
+    "https://hydrovolter.com/",
+    "http://hydrovolter.com",
     "https://hydrovolter.github.io",
-    "https://hydrovolter.vercel.app",
-    "http://localhost:5503"
+    "http://hydrovolter.github.io",
+    "https://hydrovolter.netlify.app",
+    "http://hydrovolter.netlify.app",
 ]
 
 app = Flask(__name__)
