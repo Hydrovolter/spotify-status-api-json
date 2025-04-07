@@ -19,19 +19,7 @@ REFRESH_TOKEN_URL = "https://accounts.spotify.com/api/token"
 NOW_PLAYING_URL = "https://api.spotify.com/v1/me/player/currently-playing"
 RECENTLY_PLAYING_URL = "https://api.spotify.com/v1/me/player/recently-played?limit=1"
 
-allowedOrigins = [
-    "http://localhost:5503",
-    "https://hydrovolter.pages.dev/",
-    "http://hydrovolter.pages.dev",
-    "https://hydrovolter.vercel.app/",
-    "http://hydrovolter.vercel.app",
-    "https://hydrovolter.com/",
-    "http://hydrovolter.com",
-    "https://hydrovolter.github.io",
-    "http://hydrovolter.github.io",
-    "https://hydrovolter.netlify.app",
-    "http://hydrovolter.netlify.app"
-]
+allowedOrigins = ["http://localhost:5503", "https://hydrovolter.pages.dev/", "http://hydrovolter.pages.dev", "https://hydrovolter.vercel.app/", "http://hydrovolter.vercel.app", "https://hydrovolter.com/", "http://hydrovolter.com", "https://hydrovolter.github.io", "http://hydrovolter.github.io", "https://hydrovolter.netlify.app", "http://hydrovolter.netlify.app"]
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": allowedOrigins}})
