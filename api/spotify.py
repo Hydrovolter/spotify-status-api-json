@@ -20,18 +20,22 @@ NOW_PLAYING_URL = "https://api.spotify.com/v1/me/player/currently-playing"
 RECENTLY_PLAYING_URL = "https://api.spotify.com/v1/me/player/recently-played?limit=1"
 
 allowedOrigins = [
-    "http://localhost:5503",
-    "https://hydrovolter.pages.dev",
-    "http://hydrovolter.pages.dev",
-    "https://hydrovolter.vercel.app",
-    "http://hydrovolter.vercel.app",
-    "https://hydrovolter.com",
-    "http://hydrovolter.com",
-    "https://hydrovolter.github.io",
-    "http://hydrovolter.github.io",
-    "https://hydrovolter.netlify.app",
-    "http://hydrovolter.netlify.app"
-]
+  "http://localhost:5503",
+  "https://hydrovolter.pages.dev",
+  "http://hydrovolter.pages.dev",
+  "https://hydrovolter.vercel.app",
+  "http://hydrovolter.vercel.app",
+  "https://hydrovolter.com",
+  "http://hydrovolter.com",
+  "https://hydrovolter.github.io",
+  "http://hydrovolter.github.io",
+  "https://hydrovolter.netlify.app",
+  "http://hydrovolter.netlify.app",
+  "https://hydrovolter.web.app",
+  "http://hydrovolter.web.app",
+  "https://hydrovolter.firebaseapp.com",
+  "http://hydrovolter.firebaseapp.com"
+];
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": allowedOrigins}})
