@@ -34,7 +34,9 @@ allowedOrigins = [
   "https://hydrovolter.web.app",
   "http://hydrovolter.web.app",
   "https://hydrovolter.firebaseapp.com",
-  "http://hydrovolter.firebaseapp.com"
+  "http://hydrovolter.firebaseapp.com",
+  "https://hydrovolters.pages.dev",
+  "http://hydrovolter.pages.dev"
 ];
 
 app = Flask(__name__)
